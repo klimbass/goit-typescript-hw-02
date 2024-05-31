@@ -1,0 +1,31 @@
+::-webkit-scrollbar {
+  position: absolute;
+  width: 0px;
+}
+
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 1500ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+.ReactModal__Body--open,
+.ReactModal__Html--open {
+  overflow: hidden;
+}
+.ReactModal__Overlay--after-open {
+  overflow: hidden;
+}

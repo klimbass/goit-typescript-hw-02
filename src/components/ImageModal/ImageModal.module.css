@@ -1,0 +1,49 @@
+.discr {
+  position: absolute;
+  bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.618);
+  border-radius: 0 8px 0 0;
+  width: 86px;
+  padding: 4px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 1000ms linear;
+}
+
+.likes {
+  color: #fafafa;
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 0.5;
+}
+.author {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.618);
+  border-radius: 8px 0 0 0;
+  text-decoration: none;
+  color: #fafafa;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 1000ms linear;
+}
+
+.link {
+  color: #fafafa;
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 1;
+  margin: 0;
+}
+.container:hover > .discr,
+.container:hover > .author {
+  opacity: 1;
+}
