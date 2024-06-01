@@ -2,13 +2,20 @@ import css from "./ImageModal.module.css";
 import Modal from "react-modal";
 import { FcLike } from "react-icons/fc";
 import { HiOutlineUserCircle } from "react-icons/hi";
+import { ImageModalData } from "../commonInterfaces";
 Modal.setAppElement("#root");
+
+type Props = {
+  modalIsOpen: boolean;
+  handleModalToggle: () => void;
+  modalData: ImageModalData;
+};
 
 export default function ImageModal({
   modalIsOpen,
   handleModalToggle,
   modalData,
-}) {
+}: Props) {
   return (
     <div>
       <Modal

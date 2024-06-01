@@ -5,17 +5,30 @@ import css from "./SearchBar.module.css";
 
 const notify = () => toast.error("Please write your query...");
 
-export default function SearchBar({ onSubmit }) {
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
+type Props = {
+  onSubmit: (newQuery: string) => void;
+}
 
-    const form = evt.target;
-    const topic = form.elements.topic.value;
-    if (!topic) {
-      return notify();
-    }
-    onSubmit(topic);
-  };
+export default function SearchBar({ onSubmit }: Props) {
+ const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
+  evt.preventDefault();
+
+  const form = evt.currentTarget as HTMLFormElement;
+  const topicInput = form.elements.namedItem("topic") as HTMLInputElement | null;
+
+  if (!topicInput) {
+    return notify();
+  }
+
+  const topic: string = topicInput.value;
+
+  if (!topic) {
+    return notify();
+  }
+
+  onSubmit(topic);
+};
+
 
   return (
     <header className={css.header}>
